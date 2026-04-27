@@ -4,7 +4,7 @@ const gif = qs(".gif");
 const [yesBtn, noBtn] = [".yes-btn", ".no-btn"].map(qs);
 
 const handleYesClick = () => {
-  question.innerHTML = "Awwww I love uuu";
+  question.innerHTML = "Awwww";
   gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
 
   // Remove the 'mouseover' event listener from noBtn
@@ -13,6 +13,34 @@ const handleYesClick = () => {
   // Remove the noBtn from the DOM
   noBtn.remove();
 
+  // Define predefined romantic date idea
+  // Create and style a new button for Let's Go!
+  const letsGoBtn = document.createElement("button");
+  letsGoBtn.textContent = "Let's Go!";
+  letsGoBtn.classList.add("letsgo-btn"); // You can add a class for styling if needed
+  letsGoBtn.style.position = "absolute";
+
+  // Adjust the left position based on screen width
+  if (window.innerWidth <= 800) {
+    letsGoBtn.style.left = "95%";
+  } else {
+    letsGoBtn.style.left = "63%";
+  }
+
+  letsGoBtn.style.transform = "translate(-50%, -50%)";
+  letsGoBtn.style.width = "200px"; // Adjust the width as needed
+
+letsGoBtn.addEventListener("click", () => {
+  const phoneNumber = "+628984612344"; // ganti dengan nomor tujuan (format internasional tanpa +)
+  const message = "iyaaaa aku mauuu"; // pesan yang mau dikirim
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.location.href = whatsappURL;
+});
+
+  // Replace yesBtn with the new letsGoBtn
+  yesBtn.replaceWith(letsGoBtn);
 };
 
 const handleNoMouseOver = () => {
