@@ -54,3 +54,19 @@ const handleNoMouseOver = () => {
 
 yesBtn.addEventListener("click", handleYesClick);
 noBtn.addEventListener("mouseover", handleNoMouseOver);
+
+
+const bgMusic = document.getElementById("bg-music");
+
+// fungsi untuk play sekali saat user pertama klik
+const playMusicOnce = () => {
+  bgMusic.play().catch(err => {
+    console.log("Autoplay gagal:", err);
+  });
+
+  // biar cuma jalan sekali
+  document.removeEventListener("click", playMusicOnce);
+};
+
+// listen klik pertama di halaman
+document.addEventListener("click", playMusicOnce);
