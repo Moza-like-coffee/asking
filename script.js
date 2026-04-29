@@ -32,7 +32,7 @@ const handleYesClick = () => {
 
 letsGoBtn.addEventListener("click", () => {
   const phoneNumber = "+628984612344"; // ganti dengan nomor tujuan (format internasional tanpa +)
-  const message = "iyaaaa aku mauuu"; // pesan yang mau dikirim
+  const message = "Yesss!!! ❤️ I’ve been waiting for this moment baby"; // pesan yang mau dikirim
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
